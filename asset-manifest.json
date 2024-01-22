@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Repoint/static/css/main.41a6989f.css",
+    "main.js": "/Repoint/static/js/main.5543fd01.js",
+    "static/media/embleem@4x.png": "/Repoint/static/media/embleem@4x.5526bbbd1cdf0b264836.png",
+    "index.html": "/Repoint/index.html",
+    "main.41a6989f.css.map": "/Repoint/static/css/main.41a6989f.css.map",
+    "main.5543fd01.js.map": "/Repoint/static/js/main.5543fd01.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.41a6989f.css",
+    "static/js/main.5543fd01.js"
+  ]
+}
