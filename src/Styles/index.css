@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html * {
+  font-family: 'Poppins', sans-serif;;
+}
+
+body {
+  margin:0;
+  padding:0;
+  background-color: #F2F5FD;
+}
+
+.bg-rebin-light-blue {
+  background-color: #F2F5FD;
+}
+
+.bg-rebin-blue {
+  background-color: #0043ff;
+}
+
+.bg-rebin-grey {
+  background-color: #A0AEC0;
+}
+
+.bg-gradient {
+  background: rgb(0,67,255);
+  background: linear-gradient(90deg, rgba(0,67,255,1) 0%, rgba(18,39,79,1) 100%);
+}
+
+.bg-gradient-hover:hover {
+  background: rgb(0,67,255);
+  background: linear-gradient(30deg, rgba(0,67,255,1) 0%, rgba(18,39,79,1) 100%);
+}
+
+.bg-rebin-grey-hover:hover {
+  background-color: #A0AEC0;
+}
+
+.bg-gradient-footer {
+  background: rgb(0,67,255);
+  background: linear-gradient(30deg, rgba(0,67,255,1) 0%, rgba(18,39,79,1) 100%);
+}
+
+.divide-rebin-darkblue {
+  border-color:#12274F
+}
+
+.text-gradient {
+  background: -webkit-linear-gradient(#0043ff, #12274F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-rebin-darkblue {
+  color: #12274F
+}
+
+.text-rebin-blue {
+  color:#0043ff;
+}
+
+.text-rebin-grey {
+  color: #A0AEC0;
+}
+
+
+.text-rebin-blue-hover:hover {
+  color:#0043ff;
+}
+
+
+.text-gradient-hover:hover {
+  background: -webkit-linear-gradient(left,#0043ff, #12274F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight:semi-bold;
+}
+
+.border-rebin-blue {
+  border-style: solid;
+  border-color: #12274F;
+  border-width: 3px;
+}
+
+.rdt_TableHeadRow {
+  color: #A0AEC0;
+}
+
+.rdt_TableCell {
+  color: #12274F;
+  font-weight:500;
+}
