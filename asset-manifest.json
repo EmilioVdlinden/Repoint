@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Repoint/static/css/main.acb81271.css",
-    "main.js": "/Repoint/static/js/main.07b6bfe9.js",
+    "main.js": "/Repoint/static/js/main.a8e9086a.js",
     "static/media/embleem@4x.png": "/Repoint/static/media/embleem@4x.5526bbbd1cdf0b264836.png",
     "index.html": "/Repoint/index.html",
     "static/media/blueEllips.svg": "/Repoint/static/media/blueEllips.49429df6218499a02cd42f4315f3af7c.svg",
     "static/media/darkBlueEllips.svg": "/Repoint/static/media/darkBlueEllips.5cd3151e84df59cc877bb5249a7df6a4.svg",
     "static/media/redEllipse.svg": "/Repoint/static/media/redEllipse.6b3099ff8c7cac7d147ce92c7cb9f969.svg",
     "main.acb81271.css.map": "/Repoint/static/css/main.acb81271.css.map",
-    "main.07b6bfe9.js.map": "/Repoint/static/js/main.07b6bfe9.js.map"
+    "main.a8e9086a.js.map": "/Repoint/static/js/main.a8e9086a.js.map"
   },
   "entrypoints": [
     "static/css/main.acb81271.css",
-    "static/js/main.07b6bfe9.js"
+    "static/js/main.a8e9086a.js"
   ]
 }
