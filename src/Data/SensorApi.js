@@ -1,54 +1,9 @@
 const Sensors = [
-  {id: "C564D2",
-   location: "WZC Andante papier ",
-   height: 2700,
+  {id: "C3A61D",
+   location: "Stadhuis Aalst",
+   height: 610,
    maxFill: 80
-  },
-  {id: "C3ACA1",
-   location: "WZC Andante glas ",
-   height: 2700,
-   maxFill: 80
-  },
-  {id: "C560F4",
-   location: "WZC Andante PMD ",
-   height: 2700,
-   maxFill: 80
-  },
-  {id: "C3C16C",
-   location: "WZC Andante restafval ",
-   height: 2700,
-   maxFill: 80
-  },
-  {id: "C54303",
-   location: "WZC Ceres papier ",
-   height: 2700,
-   maxFill: 80
-  },
-  {id: "C53C6E",
-   location: "Depot wervik glas GK-89",
-   height: 1700,
-   maxFill: 80
-  },
-  {id: "C3ACA2",
-   location: "Depot wervik glas GK-88",
-   height: 1700,
-   maxFill: 80
-  },
-  {id: "C560EB",
-   location: "Depot wervik glas 4946",
-   height: 1230,
-   maxFill: 80
-  },
-  {id: "C56EA2",
-   location: "Depot wervik glas 4948",
-   height: 1230,
-   maxFill: 80
-  },
-  {id: "C56E1D",
-   location: "WZC Ceres restafval",
-   height: 2700,
-   maxFill: 80
-  },
+  }
 ]
 
 const fetchData = async (deviceID) => {
@@ -150,7 +105,60 @@ export { fetchNewData, getLocation, getFullBins, getBinDistribution };
 
 
 
- /*Math.round(response.items[0].parsedPayload.distance / getFillLevel(id));*/
+ /*Math.round(response.items[0].parsedPayload.distance / getFillLevel(id));
+ 
+ {id: "C564D2",
+   location: "WZC Andante papier ",
+   height: 2700,
+   maxFill: 80
+  },
+  {id: "C3ACA1",
+   location: "WZC Andante glas ",
+   height: 2700,
+   maxFill: 80
+  },
+  {id: "C560F4",
+   location: "WZC Andante PMD ",
+   height: 2700,
+   maxFill: 80
+  },
+  {id: "C3C16C",
+   location: "WZC Andante restafval ",
+   height: 2700,
+   maxFill: 80
+  },
+  {id: "C54303",
+   location: "WZC Ceres papier ",
+   height: 2700,
+   maxFill: 80
+  },
+  {id: "C53C6E",
+   location: "Depot wervik glas GK-89",
+   height: 1700,
+   maxFill: 80
+  },
+  {id: "C3ACA2",
+   location: "Depot wervik glas GK-88",
+   height: 1700,
+   maxFill: 80
+  },
+  {id: "C560EB",
+   location: "Depot wervik glas 4946",
+   height: 1230,
+   maxFill: 80
+  },
+  {id: "C56EA2",
+   location: "Depot wervik glas 4948",
+   height: 1230,
+   maxFill: 80
+  },
+  {id: "C56E1D",
+   location: "WZC Ceres restafval",
+   height: 2700,
+   maxFill: 80
+  },
+
+ */
 
  
  
