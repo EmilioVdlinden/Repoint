@@ -17,6 +17,7 @@ const columns = [
     id: 'distance',
 		name: 'FILL LEVEL [%]',
 		selector: row => row.distance,
+		sortable: true
 	},
   {
     id: 'temp',
@@ -34,7 +35,8 @@ const SensorTable = ({sensorData}) => {
     <DataTable
 			columns={columns}
 			data={sensorData}
-      pagination     
+      pagination = {true}    
+			paginationPerPage = {5}
       highlightOnHover={true}
 		/>
   );

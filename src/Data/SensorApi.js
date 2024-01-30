@@ -1,7 +1,52 @@
 const Sensors = [
-  {id: "C3A61D",
-   location: "Aalst stadhuis",
-   height: 610,
+  {id: "C564D2",
+   location: "WZC Andante papier ",
+   height: 2700,
+   maxFill: 80
+  },
+  {id: "C3ACA1",
+   location: "WZC Andante glas ",
+   height: 2700,
+   maxFill: 80
+  },
+  {id: "C560F4",
+   location: "WZC Andante PMD ",
+   height: 2700,
+   maxFill: 80
+  },
+  {id: "C3C16C",
+   location: "WZC Andante restafval ",
+   height: 2700,
+   maxFill: 80
+  },
+  {id: "C54303",
+   location: "WZC Ceres papier ",
+   height: 2700,
+   maxFill: 80
+  },
+  {id: "C53C6E",
+   location: "Depot wervik glas GK-89",
+   height: 1700,
+   maxFill: 80
+  },
+  {id: "C3ACA2",
+   location: "Depot wervik glas GK-88",
+   height: 1700,
+   maxFill: 80
+  },
+  {id: "C560EB",
+   location: "Depot wervik glas 4946",
+   height: 1230,
+   maxFill: 80
+  },
+  {id: "C56EA2",
+   location: "Depot wervik glas 4948",
+   height: 1230,
+   maxFill: 80
+  },
+  {id: "C56E1D",
+   location: "WZC Ceres restafval",
+   height: 2700,
    maxFill: 80
   },
 ]
@@ -26,7 +71,8 @@ const fetchNewData = async () => {
     const id = Sensors[i].id;
     const location = getLocation(id);
     const temp = response.items[0].parsedPayload.temperature; 
-    const fill = (response.items[0].parsedPayload.roiMax > 200 && response.items[0].parsedPayload.roiMax < 610) ? ((610 - response.items[0].parsedPayload.roiMax ) / 610 * 100).toFixed(0) : ((610 -  response.items[0].parsedPayload.od1) / 610 * 100).toFixed(0);
+    /*const fill = (response.items[0].parsedPayload.roiMax > 200 && response.items[0].parsedPayload.roiMax < 610) ? ((610 - response.items[0].parsedPayload.roiMax ) / 610 * 100).toFixed(0) : ((610 -  response.items[0].parsedPayload.od1) / 610 * 100).toFixed(0);*/
+    const fill = Math.round(((Sensors[i].height - response.items[0].parsedPayload.roiMax) / ( Sensors[i].height ) * 100),0);
     const time = new Date(response.items[0].time.seconds * 1000).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true });
     newData.push({id: id, location: location, time: time, distance: fill, temp: temp});
   }
@@ -48,6 +94,29 @@ const getFullBins = async () => {
   return fullBins;
 }
 
+const getBinDistribution = async () => {
+  let fullBins = 0;
+  let mediumBins =0;
+  let emptyBins = 0;
+  const data = await fetchNewData();
+  for (let i = 0; i < Sensors.length; i++){
+    for (let j = 0; j < data.length; j++ ){
+      if(Sensors[i].id == data[j].id){
+        if( data[j].distance > 75){
+          fullBins = fullBins + 1 ;
+        }
+        if( data[j].distance < 75 && data[j].distance > 50 ){
+          mediumBins = mediumBins + 1 ;
+        }
+        if( data[j].distance < 50 ){
+          emptyBins = emptyBins + 1 ;
+        }
+      }
+    }
+  }
+  return {fullBins, mediumBins, emptyBins};
+}
+
 const getLocation = (id) => {
   for (let i = 0; i < Sensors.length; i++){
     if(Sensors[i].id == id){
@@ -64,12 +133,11 @@ const getFillLevel = (id) => {
   }
 }
 
-const result = await getFullBins();
-console.log(result);
 
 
 
-export { fetchNewData, getLocation, getFullBins };
+
+export { fetchNewData, getLocation, getFullBins, getBinDistribution };
 
 
 
