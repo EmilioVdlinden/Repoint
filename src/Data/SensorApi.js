@@ -72,7 +72,7 @@ const fetchNewData = async () => {
     const location = getLocation(id);
     const temp = response.items[0].parsedPayload.temperature; 
     /*const fill = (response.items[0].parsedPayload.roiMax > 200 && response.items[0].parsedPayload.roiMax < 610) ? ((610 - response.items[0].parsedPayload.roiMax ) / 610 * 100).toFixed(0) : ((610 -  response.items[0].parsedPayload.od1) / 610 * 100).toFixed(0);*/
-    const fill = Math.round(((Sensors[i].height - response.items[0].parsedPayload.roiMax) / ( Sensors[i].height ) * 100),0);
+    const fill = greaterNull(Math.round(((Sensors[i].height - response.items[0].parsedPayload.roiMax) / ( Sensors[i].height ) * 100),0));
     const time = new Date(response.items[0].time.seconds * 1000).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true });
     newData.push({id: id, location: location, time: time, distance: fill, temp: temp});
   }
@@ -130,6 +130,15 @@ const getFillLevel = (id) => {
     if(Sensors[i].id == id){
       return Sensors[i].height;
     }
+  }
+}
+
+const greaterNull = (number) => {
+  if(number >= 0) {
+    return number;
+  }
+  if(number < 0) {
+    return 0;
   }
 }
 
